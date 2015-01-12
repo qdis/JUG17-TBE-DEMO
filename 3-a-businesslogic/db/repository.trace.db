@@ -1,0 +1,317 @@
+12-10 15:58:09 jdbc[5]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-182]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:174)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:119)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionCreator.makeConnection(DriverManagerConnectionCreator.java:51)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:75)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:106)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.buildJdbcConnectionAccess(JdbcServicesImpl.java:260)
+	at org.hibernate.engine.jdbc.internal.JdbcServicesImpl.configure(JdbcServicesImpl.java:94)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:111)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:234)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:206)
+	at org.hibernate.cfg.Configuration.buildTypeRegistrations(Configuration.java:1887)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:1845)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:852)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl$4.perform(EntityManagerFactoryBuilderImpl.java:845)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.withTccl(ClassLoaderServiceImpl.java:398)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:844)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:75)
+	at org.hibernate.ejb.HibernatePersistence.createEntityManagerFactory(HibernatePersistence.java:54)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:63)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:47)
+	at org.tbe.jug.tools.GenericTest.initialize(GenericTest.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:24)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-182]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 60 more
+12-10 16:02:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER" not found; SQL statement:
+alter table User drop constraint FK_evepd9fayg63va4eyovv5yeip if exists [42102-182]
+12-10 16:02:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:02:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:02:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:02:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:02:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:02:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:02:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:02:44 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:02:44 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:02:44 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:02:44 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:02:44 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT USER0_.EMAIL AS EMAIL1_2_0_, USER0_.INTERNALID AS INTERNAL2_2_0_, USER0_.FIRSTNAME AS FIRSTNAM3_2_0_, USER0_.GROUP_GROUPID AS GROUP_GR5_2_0_, USER0_.LASTNAME AS LASTNAME4_2_0_, GROUP1_.GROUPID AS GROUPID1_0_1_, GROUP1_.NAME AS NAME2_0_1_ FROM USER USER0_ LEFT OUTER JOIN GROUP[*] GROUP1_ ON USER0_.GROUP_GROUPID=GROUP1_.GROUPID WHERE USER0_.EMAIL=? AND USER0_.INTERNALID=? "; expected "identifier"; SQL statement:
+select user0_.email as email1_2_0_, user0_.internalId as internal2_2_0_, user0_.firstName as firstNam3_2_0_, user0_.group_groupId as group_gr5_2_0_, user0_.lastName as lastName4_2_0_, group1_.groupId as groupId1_0_1_, group1_.name as name2_0_1_ from User user0_ left outer join Group group1_ on user0_.group_groupId=group1_.groupId where user0_.email=? and user0_.internalId=? [42001-182]
+12-10 16:03:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:03:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:03:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:03:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:03:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:04:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:04:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:04:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:04:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:04:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:05:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:05:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:05:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:05:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:05:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:07:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:07:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:07:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:08:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:08:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:08:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:08:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT USER0_.EMAIL AS EMAIL1_2_0_, USER0_.INTERNALID AS INTERNAL2_2_0_, USER0_.FIRSTNAME AS FIRSTNAM3_2_0_, USER0_.GROUP_GROUPID AS GROUP_GR5_2_0_, USER0_.LASTNAME AS LASTNAME4_2_0_, GROUP1_.GROUPID AS GROUPID1_0_1_, GROUP1_.NAME AS NAME2_0_1_ FROM USER USER0_ LEFT OUTER JOIN GROUP[*] GROUP1_ ON USER0_.GROUP_GROUPID=GROUP1_.GROUPID WHERE USER0_.EMAIL=? AND USER0_.INTERNALID=? "; expected "identifier"; SQL statement:
+select user0_.email as email1_2_0_, user0_.internalId as internal2_2_0_, user0_.firstName as firstNam3_2_0_, user0_.group_groupId as group_gr5_2_0_, user0_.lastName as lastName4_2_0_, group1_.groupId as groupId1_0_1_, group1_.name as name2_0_1_ from User user0_ left outer join Group group1_ on user0_.group_groupId=group1_.groupId where user0_.email=? and user0_.internalId=? [42001-182]
+12-10 16:08:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:08:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:08:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:08:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT USER0_.EMAIL AS EMAIL1_2_0_, USER0_.INTERNALID AS INTERNAL2_2_0_, USER0_.FIRSTNAME AS FIRSTNAM3_2_0_, USER0_.GROUP_GROUPID AS GROUP_GR5_2_0_, USER0_.LASTNAME AS LASTNAME4_2_0_, GROUP1_.GROUPID AS GROUPID1_0_1_, GROUP1_.NAME AS NAME2_0_1_ FROM USER USER0_ LEFT OUTER JOIN GROUP[*] GROUP1_ ON USER0_.GROUP_GROUPID=GROUP1_.GROUPID WHERE USER0_.EMAIL=? AND USER0_.INTERNALID=? "; expected "identifier"; SQL statement:
+select user0_.email as email1_2_0_, user0_.internalId as internal2_2_0_, user0_.firstName as firstNam3_2_0_, user0_.group_groupId as group_gr5_2_0_, user0_.lastName as lastName4_2_0_, group1_.groupId as groupId1_0_1_, group1_.name as name2_0_1_ from User user0_ left outer join Group group1_ on user0_.group_groupId=group1_.groupId where user0_.email=? and user0_.internalId=? [42001-182]
+12-10 16:11:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:11:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:11:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:11:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:11:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:14:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:14:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:14:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:14:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:14:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:15:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:15:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:15:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:15:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:15:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:16:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:16:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:16:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:16:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:16:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:17:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:17:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:17:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:17:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:18:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:18:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:18:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:18:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:18:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:19:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:19:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:19:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:19:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:19:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:20:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:20:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, NAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, name varchar(255), primary key (groupId)) [42001-182]
+12-10 16:20:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_EVEPD9FAYG63VA4EYOVV5YEIP FOREIGN KEY (GROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_evepd9fayg63va4eyovv5yeip foreign key (group_groupId) references Group [42001-182]
+12-10 16:20:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:20:26 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (NAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (name, groupId) values (?, ?) [42001-182]
+12-10 16:23:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE GROUP[*] IF EXISTS "; expected "identifier"; SQL statement:
+drop table Group if exists [42001-182]
+12-10 16:23:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE GROUP[*] (GROUPID INTEGER NOT NULL, GROUPNAME VARCHAR(255), PRIMARY KEY (GROUPID)) "; expected "identifier"; SQL statement:
+create table Group (groupId integer not null, groupName varchar(255), primary key (groupId)) [42001-182]
+12-10 16:23:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE USER ADD CONSTRAINT FK_QQ3A7DSQPIMEBYVUA2VRN6MGS FOREIGN KEY (ASSIGNEDGROUP_GROUPID) REFERENCES GROUP[*] "; expected "identifier"; SQL statement:
+alter table User add constraint FK_qq3a7dsqpimebyvua2vrn6mgs foreign key (assignedGroup_groupId) references Group [42001-182]
+12-10 16:23:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (GROUPNAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (groupName, groupId) values (?, ?) [42001-182]
+12-10 16:23:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO GROUP[*] (GROUPNAME, GROUPID) VALUES (?, ?) "; expected "identifier"; SQL statement:
+insert into Group (groupName, groupId) values (?, ?) [42001-182]
